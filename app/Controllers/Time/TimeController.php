@@ -43,11 +43,11 @@ class TimeController extends ControllerAbstract
 	public function getSummerValues(){
 
 		foreach(range(0, 23) as $hour){
-			if($hour < 6 || ($hour >= 19 && $hour <= 23)){
+			if($hour <= 6 || ($hour >= 19 && $hour <= 23)){
 				$hours[$hour] = "off";
-			} elseif(($hour >= 6 && $hour < 10) || ($hour >= 16 && $hour < 19)) {
+			}} elseif(($hour > 6 && $hour <= 10) || ($hour > 16 && $hour < 19)) {
 				$hours[$hour] = "mid";
-			} elseif($hour >= 10 && $hour < 16 ) {
+			} elseif($hour > 10 && $hour <= 16 ) {
 				$hours[$hour] = "on";
 			}
 		}
@@ -62,11 +62,11 @@ class TimeController extends ControllerAbstract
 	public function getWinterValues(){
 
 		foreach(range(0, 23) as $hour){
-			if($hour < 6 || ($hour >= 19 && $hour <= 23)){
+			if($hour <= 6 || ($hour >= 19 && $hour <= 23)){
 				$hours[$hour] = "off";
-			} elseif(($hour >= 6 && $hour < 10) || ($hour >= 16 && $hour < 19)) {
+			} elseif(($hour > 6 && $hour <= 10) || ($hour > 16 && $hour < 19)) {
 				$hours[$hour] = "on";
-			} elseif($hour >= 10 && $hour < 16 ) {
+			} elseif($hour > 10 && $hour <= 16 ) {
 				$hours[$hour] = "mid";
 			}
 		}
